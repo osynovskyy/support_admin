@@ -10,7 +10,7 @@ import jsonServerProvider from 'ra-data-json-server';
 //   }
 // }
 
-const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com")
+const dataProvider = jsonServerProvider("https://my-json-server.typicode.com/osynovskyy/support_admin/")
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
