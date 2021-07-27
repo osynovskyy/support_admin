@@ -2,7 +2,7 @@ import * as React from "react";
 import { Admin, EditGuesser, ListGuesser, Resource, ShowView } from 'react-admin';
 
 import jsonServerProvider from 'ra-data-json-server';
-import { UserList } from "./Users";
+import { UserList, UserShow } from "./Users";
 
 // const settings = {
 //   headers: {
@@ -15,7 +15,7 @@ const dataProvider = jsonServerProvider("https://my-json-server.typicode.com/osy
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} show={ShowView} />
+    <Resource name="users" list={UserList} show={UserShow} />
   </Admin>
 );
 

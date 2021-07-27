@@ -53,6 +53,19 @@
         "expires_date": "2022-03-14 17:22:13",
         "is_trial_period": true
       }
+    },
+    {
+      "id": 4,
+      "email": null,
+      "platform": "web",
+      "client_version": null,
+      "gender": null,
+      "fitness_level": null,
+      "language": null,
+      "is_paid": false,
+      "has_extra_purchases": false,
+      "payment_info": {
+      }
     }
   ]
 }
