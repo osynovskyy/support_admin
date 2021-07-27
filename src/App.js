@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Admin, ListGuesser, Resource } from 'react-admin';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import jsonServerProvider from 'ra-data-json-server';
+
+// const settings = {
+//   headers: {
+//     Authorization: "Bearer 1/1193694351433099:1ee2f9bbd9a342e01a7ab7b0b2ecd59f",
+//     Accept: "application/json"
+//   }
+// }
+
+const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com")
+
+const App = () => (
+  <Admin dataProvider={dataProvider}>
+    <Resource name="users" list={ListGuesser} />
+  </Admin>
+);
 
 export default App;
