@@ -11,7 +11,7 @@
       "is_paid": true,
       "has_extra_purchases": false,
       "payment_info": {
-        "product_id": "com.fitcoach.one.year.29.99",
+        "product": "com.fitcoach.one.year.29.99",
         "original_purchase_date": "2021-03-14 17:25:24",
         "purchase_date": "2021-03-14 17:25:24",
         "expires_date": "2022-03-14 17:22:13",
@@ -29,7 +29,7 @@
       "is_paid": false,
       "has_extra_purchases": true,
       "payment_info": {
-        "product_id": "com.fitcoach.one.year.29.99",
+        "product": "com.fitcoach.one.year.29.99",
         "original_purchase_date": "2021-03-14 17:25:24",
         "purchase_date": "2021-03-14 17:25:24",
         "expires_date": "2022-03-14 17:22:13",
@@ -47,7 +47,7 @@
       "is_paid": true,
       "has_extra_purchases": false,
       "payment_info": {
-        "product_id": "com.fitcoach.one.year.29.99",
+        "product": "com.fitcoach.one.year.29.99",
         "original_purchase_date": "2021-03-14 17:25:24",
         "purchase_date": "2021-03-14 17:25:24",
         "expires_date": "2022-03-14 17:22:13",
