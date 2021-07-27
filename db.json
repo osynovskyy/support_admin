@@ -20,7 +20,7 @@
     },
     {
       "id": 2,
-      "email": "example@email.com",
+      "email": null,
       "platform": "android",
       "client-version": "3.1.0",
       "gender": "male",
@@ -38,7 +38,7 @@
     },
     {
       "id": 3,
-      "email": "example@email.com",
+      "email": null,
       "platform": "web",
       "client-version": null,
       "gender": "male",
