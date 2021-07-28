@@ -15,7 +15,7 @@ const dataProvider = jsonServerProvider("https://my-json-server.typicode.com/osy
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} show={UserShow} />
+    <Resource name="users" list={ListGuesser} show={UserShow} />
   </Admin>
 );
 

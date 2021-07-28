@@ -12,10 +12,10 @@ export const UserList = props => (
     <List {...props} filters={UserFilters}sort={{ field: "created_at", order: "DESC" }} bulkActionButtons={false} pagination={<UserPagination />} perPage={25}>
         <Datagrid rowClick="show">
             <DateField source="created_at" label="CREATED AT" />
+            <TextField source="sign_up_platform" label="SIGNED UP ON"/>
             <TextField source="id" label="USER ID"/>
             <EmailField source="email" label="EMAIL"/>
             <BooleanField source="has_account" label="ACCOUNT"/>
-            <TextField source="platform" label="PLATFORM"/>
             <TextField source="client_platform" label="CLIENT PLATFORM"/>
             <TextField source="client_version" label="CLIENT VERSION"/>
             {/* <TextField source="gender" label="GENDER"/>
