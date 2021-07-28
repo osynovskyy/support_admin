@@ -44,7 +44,7 @@ export const UserShow = (props) => (
                 <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
             </Tab>
             <Tab label="Payment Info" path="payment_details">
-            <TextField source="payment_info.product" label="PRODUCT"/>
+                <TextField source="payment_info.product" label="PRODUCT"/>
                 <DateField source="payment_info.original_purchase_date" label="ORIGINAL PURCHASE DATE"/>
                 <DateField source="payment_info.purchase_date" label="PURCHASE DATE"/>
                 <DateField source="payment_info.expires_date" label="EXPIRES DATE"/>
