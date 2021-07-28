@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, Layout, TabbedShowLayout} from 'react-admin';
+import { List, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout} from 'react-admin';
 
 export const UserList = props => (
     <List {...props}>
@@ -18,22 +18,10 @@ export const UserList = props => (
     </List>
 );
 
-const UserViewAside = () => {
-    // const record = useRecordContext();
-    return
-    <Layout>
-        <TextField source="payment_info.product" label="PRODUCT"/>
-        <DateField source="payment_info.original_purchase_date" label="ORIGINAL PURCHASE DATE"/>
-        <DateField source="payment_info.purchase_date" label="PURCHASE DATE"/>
-        <DateField source="payment_info.expires_date" label="EXPIRES DATE"/>
-        <BooleanField source="payment_info.is_trial_period" label="TRIAL PERIOD"/>
-    </Layout>
-};
-
 export const UserShow = (props) => (
     <Show {...props} >
         <TabbedShowLayout>
-            <Tab label="Details">
+            <Tab label="User Details">
                 <TextField source="id" label="USER ID"/>
                 <EmailField source="email" label="EMAIL"/>
                 <TextField source="platform" label="PLATFORM"/>
@@ -44,7 +32,7 @@ export const UserShow = (props) => (
                 <BooleanField source="is_paid" label="PAID"/>
                 <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
             </Tab>
-            <Tab label="Payment Info">
+            <Tab label="Payment Info" path="payment_details">
             <TextField source="payment_info.product" label="PRODUCT"/>
                 <DateField source="payment_info.original_purchase_date" label="ORIGINAL PURCHASE DATE"/>
                 <DateField source="payment_info.purchase_date" label="PURCHASE DATE"/>
