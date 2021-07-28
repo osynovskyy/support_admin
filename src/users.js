@@ -20,10 +20,10 @@ export const UserList = props => (
             <TextField source="client_version" label="CLIENT VERSION" emptyText="-"/>
             {/* <TextField source="gender" label="GENDER"/>
             <TextField source="fitness_level" label="FITNESS LEVEL"/> */}
-            <TextField source="language" label="LANGUAGE"/>
+            <TextField source="language" label="LANGUAGE" emptyText="-"/>
             <BooleanField source="is_paid" label="PAID"/>
             <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
-            <TextField source="payment_info.product" label="PRODUCT"/>
+            <TextField source="payment_info.product" label="PRODUCT" emptyText="-"/>
         </Datagrid>
     </List>
 );

@@ -52,7 +52,7 @@
       "client_version": null,
       "gender": "male",
       "fitness_level": 3,
-      "language": "ch",
+      "language": null,
       "is_paid": true,
       "has_extra_purchases": false,
       "payment_info": {
@@ -73,7 +73,7 @@
       "client_version": "4.0.0",
       "gender": null,
       "fitness_level": null,
-      "language": null,
+      "language": "ko",
       "is_paid": false,
       "has_extra_purchases": false,
       "payment_info": {
