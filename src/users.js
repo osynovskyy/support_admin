@@ -16,6 +16,7 @@ export const UserList = props => (
             <EmailField source="email" label="EMAIL"/>
             <BooleanField source="has_account" label="ACCOUNT"/>
             <TextField source="platform" label="PLATFORM"/>
+            <TextField source="client_platform" label="CLIENT PLATFORM"/>
             <TextField source="client_version" label="CLIENT VERSION"/>
             {/* <TextField source="gender" label="GENDER"/>
             <TextField source="fitness_level" label="FITNESS LEVEL"/> */}
