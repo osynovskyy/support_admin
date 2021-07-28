@@ -1,9 +1,17 @@
 import * as React from "react";
-import { List, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout} from 'react-admin';
+import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput} from 'react-admin';
+
+const UserPagination = props => <Pagination rowsPerPageOptions={[25, 50]} {...props} />;
+
+const UserFilters = [
+    <TextInput label="USER ID" source="id" alwaysOn />,
+    <TextInput label="EMAIL" source="email" alwaysOn />,
+];
 
 export const UserList = props => (
-    <List {...props}>
+    <List {...props} filters={UserFilters} bulkActionButtons={false} pagination={<UserPagination />} perPage={25}>
         <Datagrid rowClick="show">
+            <DateField source="created_at" label="CREATED AT" />
             <TextField source="id" label="USER ID"/>
             <EmailField source="email" label="EMAIL"/>
             <TextField source="platform" label="PLATFORM"/>
@@ -22,6 +30,7 @@ export const UserShow = (props) => (
     <Show {...props} >
         <TabbedShowLayout>
             <Tab label="User Details">
+                <DateField source="created_at" label="CREATED AT" />
                 <TextField source="id" label="USER ID"/>
                 <EmailField source="email" label="EMAIL"/>
                 <TextField source="platform" label="PLATFORM"/>
