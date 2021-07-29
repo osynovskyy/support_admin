@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Admin, EditGuesser, ListGuesser, Resource, ShowGuesser, ShowView } from 'react-admin';
+import { Admin, Resource, Layout, MenuItemLink, UserMenu } from 'react-admin';
 
 import jsonServerProvider from 'ra-data-json-server';
 import { UserList, UserShow } from "./Users";
@@ -14,8 +14,8 @@ import { UserList, UserShow } from "./Users";
 const dataProvider = jsonServerProvider("https://my-json-server.typicode.com/osynovskyy/support_admin/")
 
 const App = () => (
-  <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} show={UserShow} />
+  <Admin dataProvider={dataProvider} title="Support Admin">
+    <Resource title="FitCoach" name="users" list={UserList} show={UserShow} />
   </Admin>
 );
 

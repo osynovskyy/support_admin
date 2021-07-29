@@ -1,5 +1,8 @@
-import * as React from "react";
-import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput} from 'react-admin';
+
+import React from 'react';
+import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput, useShowController, ShowButton} from 'react-admin';
+
+import { JsonField } from "react-admin-json-view";
 
 const UserPagination = props => <Pagination rowsPerPageOptions={[25, 50]} {...props} />;
 
@@ -23,33 +26,32 @@ export const UserList = props => (
             <TextField source="language" label="LANGUAGE" emptyText="-"/>
             <BooleanField source="is_paid" label="PAID"/>
             <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
-            <TextField source="payment_info.product" label="PRODUCT" emptyText="-"/>
+            <TextField source="active_products" label="PRODUCT" emptyText="-"/>
+            <ShowButton title="RAW DATA"/>
         </Datagrid>
     </List>
 );
 
-export const UserShow = (props) => (
+export const UserShow = props => {
+    return (
     <Show {...props} >
         <TabbedShowLayout>
-            <Tab label="User Details">
+            <Tab label="User Info">
                 <DateField source="created_at" label="CREATED AT" />
                 <TextField source="id" label="USER ID"/>
-                <EmailField source="email" label="EMAIL"/>
-                <TextField source="platform" label="PLATFORM"/>
-                <TextField source="client_version" label="CLIENT VERSION"/>
-                <TextField source="gender" label="GENDER"/>
-                <TextField source="fitness_level" label="FITNESS LEVEL"/>
-                <TextField source="language" label="LANGUAGE"/>
+                <TextField source="created_on" label="CREATED ON"/>
+                <EmailField source="email" label="EMAIL" emptyText="-"/>
+                <BooleanField source="has_account" label="ACCOUNT" emptyText="-"/>
+                <TextField source="client_platform" label="CLIENT PLATFORM" emptyText="-"/>
+                <TextField source="client_version" label="CLIENT VERSION" emptyText="-"/>
+                <TextField source="language" label="LANGUAGE" emptyText="-"/>
                 <BooleanField source="is_paid" label="PAID"/>
                 <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
             </Tab>
-            <Tab label="Payment Info" path="payment_details">
-                <TextField source="payment_info.product" label="PRODUCT"/>
-                <DateField source="payment_info.original_purchase_date" label="ORIGINAL PURCHASE DATE"/>
-                <DateField source="payment_info.purchase_date" label="PURCHASE DATE"/>
-                <DateField source="payment_info.expires_date" label="EXPIRES DATE"/>
-                <BooleanField source="payment_info.is_trial_period" label="TRIAL PERIOD"/>
+            <Tab label="Payment Info (RAW)" path="payment_info">
+                <JsonField source="payment_info" />
             </Tab>
         </TabbedShowLayout>
     </Show>
-);
+    );
+}
