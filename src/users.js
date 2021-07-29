@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput, ShowButton, ArrayField, SingleFieldList, ChipField} from 'react-admin';
+import {useDataProvider, List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput, ShowButton, ArrayField, SingleFieldList, ChipField, Button} from 'react-admin';
 
 import { JsonField } from "react-admin-json-view";
 
@@ -11,11 +11,21 @@ const UserFilters = [
     <TextInput label="EMAIL" source="email" alwaysOn />,
 ];
 
+const UserProfile = ({ userId }) => {
+    const dataProvider = useDataProvider();
+
+    console.log(dataProvider);
+
+    return (
+        <div></div>
+    );
+}
+
 export const UserList = props => (
     <List {...props} filters={UserFilters}sort={{ field: "created_at", order: "DESC" }} bulkActionButtons={false} pagination={<UserPagination />} perPage={25}>
-        <Datagrid rowClick="show">
+        <Datagrid>
             <DateField source="created_at" label="CREATED AT" />
-            <TextField source="id" label="USER ID"/>
+            <TextField source="id" label="ID"/>
             <TextField source="created_on" label="CREATED ON"/>
             <EmailField source="email" label="EMAIL" emptyText="-"/>
             <BooleanField source="has_account" label="ACCOUNT" emptyText="-"/>
@@ -28,10 +38,12 @@ export const UserList = props => (
             <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
             <ArrayField source="active_products" label="PRODUCT" emptyText="-">
                 <SingleFieldList>
-                    <ChipField />
+                    <ChipField source="id" />
                 </SingleFieldList>
             </ArrayField>
-            <ShowButton title="RAW DATA"/>
+            <ShowButton label="DETAILS" title={null}/>
+            <UserProfile />
+            <Button href="https://analytics.amplitude.com/amazingapps/project/269374/search/user_id={id}" label="Analytics" />
         </Datagrid>
     </List>
 );
