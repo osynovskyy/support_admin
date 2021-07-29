@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput, useShowController, ShowButton} from 'react-admin';
+import { List, Pagination, Datagrid, Show, TextField, EmailField, BooleanField, DateField, Tab, TabbedShowLayout, TextInput, ShowButton, ArrayField, SingleFieldList, ChipField} from 'react-admin';
 
 import { JsonField } from "react-admin-json-view";
 
@@ -26,7 +26,11 @@ export const UserList = props => (
             <TextField source="language" label="LANGUAGE" emptyText="-"/>
             <BooleanField source="is_paid" label="PAID"/>
             <BooleanField source="has_extra_purchases" label="EXTRA PURCHASES"/>
-            <TextField source="active_products" label="PRODUCT" emptyText="-"/>
+            <ArrayField source="active_products" label="PRODUCT" emptyText="-">
+                <SingleFieldList>
+                    <ChipField />
+                </SingleFieldList>
+            </ArrayField>
             <ShowButton title="RAW DATA"/>
         </Datagrid>
     </List>
